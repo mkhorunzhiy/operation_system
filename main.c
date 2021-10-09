@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <math.h>
 #include "array_list.h"
 
 void fillingList(ArrayList* list, int length);
@@ -12,32 +11,34 @@ int main() {
     srand(time(NULL));
     ArrayList* list = newArrayList();
 
-    printf("After using function add 6 times:\n");
-    fillList(list, 6);
-    printList(list);
+    printf("After using add function :\n");
+    fillingList(list, 6);
+    printingList(list);
     printf("\n");
 
 
-    printf("After using function remove 2 times:\n");
+    printf("After using remove function :\n");
     removeElement(list, list->length - 1);
+    printingList(list);
+    printf("After using remove function again:\n");
     removeElement(list, list->length - 1);
-    printList(list);
+    printingList(list);
     printf("\n");
 
-    printf("After using function insert 3 times:\n");
+    printf("After using insert function :\n");
     insert(list, 2, 11);
     insert(list, 3, 22);
     insert(list, 4, 12);
-    printList(list);
+    printingList(list);
     printf("\n");
 
-    printf("After using function set 2 times:\n");
+    printf("After using set function :\n");
     set(list, 0, 3);
     set(list, 2, 21);
-    printList(list);
+    printingList(list);
     printf("\n");
 
-    printf("After using function get 2 times:\n");
+    printf("After using get function:\n");
     printf("array[0] : %d\n", get(list, 0));
     printf("array[3] : %d\n", get(list, 3));
     printf("\n");
